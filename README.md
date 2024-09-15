@@ -8,14 +8,14 @@ This is a portfolio website I have been in the process of creating for a long ti
 
 Current Agenda:
 
-- [ ] dockerize and move into a server on google cloud
-- [ ] move under the new domain
-- [ ] remove react router and actually find a static server to host it
-- [ ] move from cra to vite
+- [x] dockerize and move into a server on google cloud
+- [x] move under the new domain
+- [x] remove react router and actually find a static server to host it
+- [x] move from cra to vite
+- [x] hook up static site generator to
+- [x] hook up an email to my domain
 - [ ] set up forwarding from the github domain to the new one
-- [ ] hook up static site generator to
 - [ ] join the stevens webring
-- [ ] hook up an email to my domain
 - [ ] spline 3d visuals for big project backer
 
 Future Roadmap:
