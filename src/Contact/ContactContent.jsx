@@ -2,7 +2,7 @@ export const ContactContent = {
   paragraph1: (
     <p>
       If you would like to contact Andrew, please email{" "}
-      <a href="mailto:andy@yurovchak.net">andy@yurovchak.net</a>.
+      <a href="mailto:andrew@super-youtube.com">andrew@super-youtube.com</a>.
     </p>
   ),
   paragraph2: (
