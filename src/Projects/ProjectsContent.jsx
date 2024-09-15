@@ -21,7 +21,7 @@ export const ProjectsContent = {
   },
   bigproject2: {
     title: "QArt Encoder",
-    desc: "with Rust & Cargo",
+    desc: "with Rust",
     href: "qart-encoder",
   },
 };
