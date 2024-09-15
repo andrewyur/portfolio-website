@@ -1,55 +1,100 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+  box-sizing: border-box;
+  -webkit-user-drag: none;
+  user-select: none;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+#mobile {
+  display: none;
 }
 
-body {
+html,
+body,
+main,
+#root {
+  width: 100%;
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  padding: 0;
+}
+
+main {
+  position: fixed;
+  /* position: absolute; */
+  overflow: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  display: none;
+}
+
+img {
+  width: 100px;
 }
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  font-family: "EB Garamond", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 6rem;
+  margin: 0;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
+p {
+  font-family: "Cabin";
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.5rem;
+  margin: 0;
+  line-height: 135%;
 }
-button:hover {
-  border-color: #646cff;
+
+a,
+a:active,
+a:visited {
+  font-family: "Cabin";
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.5rem;
+  text-decoration: none;
+  margin: 0;
 }
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+
+@media only screen and (max-width: 1200px) {
+  #root * {
+    display: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  #root,
+  body,
+  html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  #mobile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f59696b7;
+    overflow: hidden;
+    padding: 50px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-size: 3rem;
+  }
+
+  #mobile h2::after {
+    content: "Sorry, I didn't optimize this content for mobile. Please view on a \
+				larger screen...";
+  }
 }

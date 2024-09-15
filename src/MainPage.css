@@ -1,0 +1,192 @@
+/*----------------------------------------Colors----------------------------------------*/
+
+:root {
+  --abouthimAccent: #ff553e;
+  --abouthimBg: #ffa879;
+  --abouthimBacker: rgba(171, 139, 139, 0.5);
+  --projectsBg: #cff5ff;
+  --projectsAccent: #483eff;
+  --projectsSubBacker: #f97171;
+  --projectsSubBackerHover: rgba(249, 113, 113, 0.85);
+  --projectsBacker: rgba(171, 139, 139, 0.5);
+  --projectsBackerHover: rgba(171, 139, 139, 0.9);
+  --contactAccent: #ff0000;
+  --contactBg: #8c986d;
+  --contactBacker: rgba(255, 48, 48, 0.5);
+}
+
+/*--------------------AboutHim Section--------------------*/
+
+#abouthim h1 {
+  color: black;
+}
+
+#abouthim p {
+  color: black;
+  background-color: var(--abouthimBacker);
+}
+
+#abouthim a,
+#abouthim a:active,
+#abouthim a:visited {
+  color: white;
+}
+
+#abouthim .backer {
+  background-color: var(--abouthimBacker);
+}
+
+/*--------------------Projects Section--------------------*/
+
+#projects h1 {
+  color: black;
+}
+
+#projects p {
+  color: white;
+}
+
+#projects > p,
+#bp > p,
+#projects .text {
+  background-color: var(--projectsBacker);
+}
+
+#projects a,
+#projects a:active,
+#projects a:visited {
+  color: black;
+}
+
+/*--------------------Contact Section--------------------*/
+
+#contact h1 {
+  color: black;
+}
+
+#contact p {
+  color: white;
+  background-color: var(--contactBacker);
+}
+
+#contact a,
+#contact a:active,
+#contact a:visited {
+  color: black;
+}
+
+/*----------------------------------------General Formatting----------------------------------------*/
+
+* {
+  box-sizing: border-box;
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+html,
+body,
+main,
+#root {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  position: fixed;
+  /* position: absolute; */
+  overflow: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  display: none;
+}
+
+img {
+  width: 100px;
+}
+
+/*----------------------------------------Nav Bar----------------------------------------*/
+
+#header {
+  position: fixed;
+  z-index: 4;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  writing-mode: vertical-lr;
+  padding-right: 20px;
+}
+
+#header button {
+  transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  padding: 30px;
+  margin: -30px;
+}
+
+#header button:hover {
+  transform: translateX(-10px);
+}
+
+/*----------------------------------------Text Formatting----------------------------------------*/
+
+#abouthim p,
+#abouthim .backer,
+#projects > p,
+#bp > p,
+#projects .text,
+#contact p {
+  border-radius: 10px;
+  padding: 15px 20px 15px 20px;
+  backdrop-filter: blur(10px);
+}
+
+h1 {
+  font-family: "EB Garamond", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 6rem;
+  margin: 0;
+}
+
+p {
+  font-family: "Cabin";
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.5rem;
+  margin: 0;
+  line-height: 135%;
+}
+
+a,
+a:active,
+a:visited {
+  font-family: "Cabin";
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.5rem;
+  text-decoration: none;
+  margin: 0;
+}
+
+button {
+  font-family: "Cabin";
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.5rem;
+  margin: 0;
+
+  background: none !important;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  color: black;
+}
