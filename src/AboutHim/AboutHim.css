@@ -22,7 +22,7 @@
   background-color: var(--abouthimAccent);
   width: 4000px;
   height: 1000px;
-
+  transform: rotate(7.64deg);
   position: absolute;
   right: 40vw;
   top: 50px;

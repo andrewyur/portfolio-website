@@ -4,6 +4,12 @@
   user-select: none;
 }
 
+.layer1,
+.layer2,
+#main {
+  will-change: transform;
+}
+
 #mobile {
   display: none;
 }

@@ -14,9 +14,8 @@ Current Agenda:
 - [x] move from cra to vite
 - [x] hook up static site generator to
 - [x] hook up an email to my domain
-- [ ] set up forwarding from the github domain to the new one
-- [ ] join the stevens webring
-- [ ] spline 3d visuals for big project backer
+- [x] set up forwarding from the github domain to the new one
+- [x] join the stevens webring
 
 Future Roadmap:
 

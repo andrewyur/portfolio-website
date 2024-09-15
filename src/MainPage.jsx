@@ -18,6 +18,10 @@ export function MainPage() {
 
   let scrollPosition = 0;
 
+  let isMac = navigator.userAgent.toUpperCase().indexOf("MAC") >= 0;
+
+  let scrolling = false;
+
   // easing value: low == fast, high == slow
   function linearInterpolation(x1, x2, easingValue) {
     return (1 - easingValue) * x1 + easingValue * x2;
@@ -42,11 +46,26 @@ export function MainPage() {
   });
 
   const handleScroll = () => {
+    console.log("wheel");
+
+    if (!scrolling) {
+      window.requestAnimationFrame(render);
+      scrolling = true;
+    }
     scrollPosition = window.scrollY;
+  };
+
+  const updateTranslateY = (e, newTranslateY) => {
+    if (e.id == "accent1") {
+      e.style.transform = `rotate(7.64deg) translateY(-${newTranslateY}px)`;
+    } else {
+      e.style.transform = `translateY(-${newTranslateY}px)`;
+    }
   };
 
   // this is laggy on some machines, and very laggy on mobile
   // will have to optimize when making mobile view
+
   const render = () => {
     //base page movement
     mainOffset = linearInterpolation(mainOffset, scrollPosition, 0.14);
@@ -55,28 +74,37 @@ export function MainPage() {
     //accents
     layer2Offset = linearInterpolation(layer2Offset, scrollPosition, 0.16);
 
-    layer1.current.forEach((e) => {
-      e.style.transform = `translateY(-${
-        Math.floor(Math.abs(mainOffset - layer1Offset) * 100) / 100
-      }px)`;
-    });
-    layer2.current.forEach((e) => {
-      // this sucks!!!
-      if (e.id == "accent1") {
-        e.style.transform = `rotate(7.64deg) translateY(-${
-          Math.floor(Math.abs(mainOffset - layer2Offset) * 100) / 100
-        }px)`;
-      } else {
-        e.style.transform = `translateY(-${
-          Math.floor(Math.abs(mainOffset - layer2Offset) * 100) / 100
-        }px)`;
-      }
-    });
-    if (appRef.current) {
-      appRef.current.style.transform = `translateY(-${
-        Math.floor(mainOffset * 100) / 100
-      }px)`;
+    if (
+      Math.abs(mainOffset - scrollPosition) < 0.0001 &&
+      Math.abs(layer1Offset - scrollPosition) < 0.0001 &&
+      Math.abs(layer2Offset - scrollPosition) < 0.0001
+    ) {
+      scrolling = false;
+      return;
     }
+
+    const mainTranslation = Math.floor(mainOffset * 100) / 100;
+    const layer1Translation =
+      Math.floor(Math.abs(mainOffset - layer1Offset) * 100) / 100;
+    const layer2Translation =
+      Math.floor(Math.abs(mainOffset - layer2Offset) * 100) / 100;
+
+    layer1.current.forEach((e) => {
+      updateTranslateY(e, layer1Translation);
+    });
+
+    layer2.current.forEach((e) => {
+      updateTranslateY(e, layer2Translation);
+    });
+
+    if (appRef.current) {
+      if (isMac) {
+        updateTranslateY(appRef.current, scrollPosition);
+      } else {
+        updateTranslateY(appRef.current, mainTranslation);
+      }
+    }
+
     window.requestAnimationFrame(render);
   };
 
