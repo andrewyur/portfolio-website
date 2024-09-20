@@ -110,9 +110,7 @@ export function MainPage() {
 
   return (
     <>
-      <header>
-        <Header />
-      </header>
+      <Header />
       <main id="main" ref={appRef}>
         <AboutHim />
         <Projects />

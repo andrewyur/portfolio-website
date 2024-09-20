@@ -11,9 +11,6 @@ export function Contact() {
           {ContactContent.paragraph2}
           {ContactContent.paragraph3}
         </div>
-        <div id="webring-container">
-          <div id="webring" className="layer1"></div>
-        </div>
       </div>
       {ContactContent.image}
     </>
