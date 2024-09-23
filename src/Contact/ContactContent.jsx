@@ -9,7 +9,7 @@ export const ContactContent = {
     <p>
       If you would like to view his resume,{" "}
       <a
-        href="https://github.com/andrewyur/resume/releases/"
+        href="https://github.com/andrewyur/resume/releases/latest"
         target="_blank"
         rel="noreferrer"
       >
