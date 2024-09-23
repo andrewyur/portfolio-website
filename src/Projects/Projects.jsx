@@ -23,7 +23,7 @@ function BigProject(props) {
       <div className="text">
         {/* This should be a Link element but MainPage errors when trying to use 
             getClientBoundingRect on Link Elements */}
-        <a href={`https://projects.super-youtube.com/${props.href}`}>
+        <a href={`https://projects.baetylboy.biz/${props.href}`}>
           {props.title}
         </a>
         <p>{props.desc}</p>
